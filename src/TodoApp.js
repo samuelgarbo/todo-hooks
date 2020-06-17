@@ -3,15 +3,15 @@ import Paper from '@material-ui/core/Paper';
 import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
 import ToolBar from '@material-ui/core/ToolBar';
-// import Grid from '@material-ui/core/Grid';
+import Grid from '@material-ui/core/Grid';
 import TodoList from './TodoList';
 import TodoForm from './TodoForm';
 
 function TodoApp(props) {
     const initialTodos = [
-        {id: 1, task: 'clean fishtank', complete: false},
-        {id: 2, task: 'walk dog', complete: false},
-        {id: 3, task: 'cook dinner', complete: false},
+        {id: 1, task: 'clean fishtank', completed: true},
+        {id: 2, task: 'walk dog', completed: false},
+        {id: 3, task: 'cook dinner', completed: false},
     ]
     const [todos, setTodos] = useState(initialTodos);
     const addTodo = (value) => {
@@ -28,8 +28,12 @@ function TodoApp(props) {
                     <Typography color='inherit'>Todos with hooks</Typography>
                 </ToolBar>
             </AppBar>
-            <TodoForm addTodo={addTodo}/>
-            <TodoList todos={todos}></TodoList>
+            <Grid container justify='center' style={{marginTop: '1rem'}}>
+                <Grid item xs={11} md={8} lg={4}>
+                    <TodoForm addTodo={addTodo}/>
+                    <TodoList todos={todos}></TodoList>
+                </Grid>
+            </Grid>
         </Paper>
 
        
