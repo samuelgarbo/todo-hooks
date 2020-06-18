@@ -10,7 +10,7 @@ import { v4 as uuid } from 'uuid';
 
 function TodoApp(props) {
     const initialTodos = [
-        { id: uuid(), task: 'clean fishtank', completed: true },
+        { id: uuid(), task: 'clean fishtank', completed: false },
         { id: uuid(), task: 'walk dog', completed: false },
         { id: uuid(), task: 'cook dinner', completed: false },
     ]

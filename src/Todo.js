@@ -17,7 +17,7 @@ function Todo(props) {
         props.checkTodo(id);
     }
     return (
-        <ListItem >
+        <ListItem style={{height:'64px'}} >
             {isEditing
                 ?   <EditTodoForm id={id} task={task} editTodo={editTodo} toggle={toggle}/>
                 :   <>

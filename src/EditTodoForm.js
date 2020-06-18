@@ -10,8 +10,8 @@ function EditTodoForm(props) {
         props.toggle()
     }
     return (        
-        <form onSubmit={handleEditTodo}>
-            <TextField value={value} onChange={handleChange} margin='normal' fullWidth/>        
+        <form onSubmit={handleEditTodo} style={{marginLeft: '1rem'}}>
+            <TextField value={value} onChange={handleChange} margin='normal' autoFocus />        
         </form>
     );
 }
