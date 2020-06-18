@@ -24,6 +24,15 @@ function TodoApp(props) {
             return todo.id !== id
         }))
     }
+    const editTodo = (todoId, todoTask) => {
+        let newTodos = todos.map(todo=>{
+            if(todo.id===todoId){
+                todo.task= todoTask;
+            }
+            return todo;
+        })
+        setTodos(newTodos)
+    }
     const checkTodo = (id) => {
         let newTodos = todos.map(todo=>{
             if(todo.id===id){
@@ -45,7 +54,7 @@ function TodoApp(props) {
             <Grid container justify='center' style={{ marginTop: '1rem' }}>
                 <Grid item xs={11} md={8} lg={4}>
                     <TodoForm addTodo={addTodo} />
-                    <TodoList todos={todos} removeTodo={removeTodo} checkTodo={checkTodo}></TodoList>
+                    <TodoList todos={todos} removeTodo={removeTodo} checkTodo={checkTodo} editTodo={editTodo}></TodoList>
                 </Grid>
             </Grid>
         </Paper>
