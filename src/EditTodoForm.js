@@ -7,6 +7,7 @@ function EditTodoForm(props) {
     const handleEditTodo = (evt) => {
         evt.preventDefault()
         props.editTodo(props.id, value);
+        reset();
         props.toggle()
     }
     return (        
